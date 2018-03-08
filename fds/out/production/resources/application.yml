@@ -1,0 +1,6 @@
+server:
+  port: 3001
+spring:
+  kafka:
+    consumer:
+      enable-auto-commit: false

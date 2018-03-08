@@ -1,0 +1,10 @@
+{"namespace": "LogDto.avro",
+  "type": "record",
+  "name": "LogAvro",
+  "fields": [
+    {"name": "orderId", "type": "long"},
+    {"name": "logType",  "type": "record", "fields": [{"name": "value", "type": "int"}]},
+    {"name": "source", "type": "string"}
+    {"name": "reason",  "type": "record", "fields": [{"name": "value", "type": "int"}]}
+  ]
+}
