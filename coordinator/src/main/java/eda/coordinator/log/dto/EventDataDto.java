@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Data
 @AllArgsConstructor
-public class EventData {
+public class EventDataDto {
     private NotificationDto notificationDto;
 
     private OrderFdsDto orderFdsDto;
 
-    public EventData() {
+    public EventDataDto() {
         this.notificationDto = new NotificationDto();
         this.orderFdsDto = new OrderFdsDto();
     }

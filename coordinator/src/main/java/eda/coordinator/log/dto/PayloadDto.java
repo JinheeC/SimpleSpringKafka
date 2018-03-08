@@ -3,28 +3,27 @@ package eda.coordinator.log.dto;
 import eda.coordinator.config.GenericRecordMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.apache.avro.generic.GenericData;
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
-public class Payload {
+public class PayloadDto {
     private Long orderNo;
 
     private Long timestamp;
 
-    private EventData eventData;
+    private EventDataDto eventDataDto;
 
-    public Payload() {
-        this.eventData = new EventData();
+    public PayloadDto() {
+        this.eventDataDto = new EventDataDto();
     }
 
-    public Payload(Long orderNo) {
+    public PayloadDto(Long orderNo) {
         this.orderNo = orderNo;
         this.timestamp = new Date().getTime();
-        this.eventData = new EventData();
+        this.eventDataDto = new EventDataDto();
     }
 
     public GenericData.Record converToAvro() {

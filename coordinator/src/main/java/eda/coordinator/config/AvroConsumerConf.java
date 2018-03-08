@@ -1,6 +1,6 @@
 package eda.coordinator.config;
 
-import eda.coordinator.log.dto.Payload;
+import eda.coordinator.log.dto.PayloadDto;
 import org.apache.avro.generic.GenericData;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -30,7 +30,7 @@ public class AvroConsumerConf {
         consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         consumerConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, AvroDeserializer.class);
 
-        return new DefaultKafkaConsumerFactory<>(consumerConfig, new StringDeserializer(), new AvroDeserializer(Payload.class));
+        return new DefaultKafkaConsumerFactory<>(consumerConfig, new StringDeserializer(), new AvroDeserializer(PayloadDto.class));
     }
 
     @Bean
